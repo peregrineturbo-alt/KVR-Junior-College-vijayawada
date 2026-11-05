@@ -1939,54 +1939,54 @@
 <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
-  // ============ DISABLE RIGHT-CLICK & INSPECT ============
+ 
   (function() {
     'use strict';
 
-    // Disable right-click context menu
+   
     document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
       return false;
     });
 
-    // Disable keyboard shortcuts for inspect/view source
+ 
     document.addEventListener('keydown', function(e) {
       // F12
       if (e.key === 'F12' || e.keyCode === 123) {
         e.preventDefault();
         return false;
       }
-      // Ctrl+Shift+I (Inspect)
+     
       if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73)) {
         e.preventDefault();
         return false;
       }
-      // Ctrl+Shift+J (Console)
+    
       if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j' || e.keyCode === 74)) {
         e.preventDefault();
         return false;
       }
-      // Ctrl+Shift+C (Inspect Element)
+     
       if (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67)) {
         e.preventDefault();
         return false;
       }
-      // Ctrl+U (View Source)
+      
       if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) {
         e.preventDefault();
         return false;
       }
-      // Ctrl+S (Save)
+     
       if (e.ctrlKey && (e.key === 'S' || e.key === 's' || e.keyCode === 83)) {
         e.preventDefault();
         return false;
       }
-      // Ctrl+P (Print)
+      
       if (e.ctrlKey && (e.key === 'P' || e.key === 'p' || e.keyCode === 80)) {
         e.preventDefault();
         return false;
       }
-      // Ctrl+A (Select All) - disabled on body but allow in inputs
+     
       if (e.ctrlKey && (e.key === 'A' || e.key === 'a' || e.keyCode === 65)) {
         const tag = e.target.tagName.toLowerCase();
         if (tag !== 'input' && tag !== 'textarea') {
@@ -1994,7 +1994,7 @@
           return false;
         }
       }
-      // Ctrl+C (Copy) - disabled except in inputs
+     
       if (e.ctrlKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67)) {
         const tag = e.target.tagName.toLowerCase();
         if (tag !== 'input' && tag !== 'textarea') {
@@ -2004,24 +2004,23 @@
       }
     });
 
-    // Disable drag
+    
     document.addEventListener('dragstart', function(e) {
       e.preventDefault();
       return false;
     });
 
-    // Disable image drag
+   
     document.querySelectorAll('img').forEach(function(img) {
       img.addEventListener('dragstart', function(e) { e.preventDefault(); });
     });
 
-    // Console warning
+   
     console.log('%c⚠️ STOP!', 'color: red; font-size: 40px; font-weight: bold;');
     console.log('%cThis browser feature is intended for developers. If someone told you to copy-paste something here, it is a scam.', 'color: white; font-size: 16px;');
     console.log('%c© 2026 KVR Junior College. All rights reserved.', 'color: #f59e0b; font-size: 14px;');
   })();
 
-  // ============ 3D ANIMATED BACKGROUND ============
   (function() {
     'use strict';
 
@@ -2217,7 +2216,7 @@
     });
   })();
 
-  // ============ MOBILE MENU SYSTEM ============
+  
   (function() {
     'use strict';
 
@@ -2302,7 +2301,7 @@
     });
   })();
 
-  // ============ SCROLL PROGRESS & HEADER ============
+ 
   window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
