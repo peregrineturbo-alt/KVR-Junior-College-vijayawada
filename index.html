@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="S-WqYuu0-JUkhc3HdYdKHnpT7VK-W3KJHp-4UR6Rg1Q" />
-<title>KVR Intermediate College in Vijayawada | MPC, BiPC, JEE, NEET</title>
-<meta name="description" content="Intermediate college in Vijayawada offering MPC and BiPC with IIT-JEE and NEET preparation. Admissions open for 2026–27. Labbipet campus.">
+<title>KVR Intermediate College in Vijayawada | MPC, BiPC, JEE, NEET | Free Quiz</title>
+<meta name="description" content="Intermediate college in Vijayawada offering MPC and BiPC with IIT-JEE and NEET preparation. Admissions open for 2026–27. Labbipet campus. Free entrance test quiz.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,6 +89,8 @@
     --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
     --gradient-whatsapp: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     --gradient-android: linear-gradient(135deg, #34A853 0%, #0F9D58 50%, #0B8043 100%);
+    --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    --gradient-danger: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
     --font-display: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --h1-size: clamp(2.25rem, 5vw, 3.5rem);
@@ -132,26 +134,6 @@
     0%, 100% { transform: translate(0, 0) scale(1); }
     33% { transform: translate(80px, -60px) scale(1.1); }
     66% { transform: translate(-60px, 80px) scale(0.95); }
-  }
-
-  .glass {
-    background: var(--glass-bg);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
-    backdrop-filter: blur(40px) saturate(180%);
-    border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    box-shadow: var(--glass-shadow);
-    position: relative;
-    overflow: hidden;
-  }
-  .glass::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent); opacity: 0.6;
-  }
-  .glass::after {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 30%);
-    pointer-events: none; border-radius: inherit;
   }
 
   h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); color: var(--text-dark); }
@@ -412,7 +394,6 @@
     background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent); opacity: 0.5;
   }
   .btn-outline:hover { background: var(--glass-bg-strong); transform: translateY(-3px); }
-
 
   .btn-whatsapp {
     background: var(--gradient-whatsapp);
@@ -781,6 +762,376 @@
   }
   .result-card .label { color: var(--text-dark); font-weight: 600; margin-bottom: 8px; font-size: 15px; }
   .result-card .detail { font-size: 13px; color: var(--text-light); }
+
+  /* ============ QUIZ SECTION ============ */
+  .quiz-section {
+    background: var(--glass-bg-subtle);
+    -webkit-backdrop-filter: blur(30px) saturate(150%);
+    backdrop-filter: blur(30px) saturate(150%);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+  }
+  .quiz-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 15% 25%, rgba(59,130,246,0.12) 0%, transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(245,158,11,0.1) 0%, transparent 45%);
+    pointer-events: none;
+  }
+  .quiz-section .container { position: relative; z-index: 2; }
+  .quiz-section .section-head h2 { color: var(--text-dark); }
+  .quiz-section .section-head p { color: var(--text-light); }
+  .quiz-section .section-tag { color: var(--accent); }
+  .quiz-section .section-tag::before, .quiz-section .section-tag::after { background: var(--accent); }
+
+  .quiz-progress-bar {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px 28px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    box-shadow: var(--glass-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .quiz-progress-bar::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent); opacity: 0.6;
+  }
+  .quiz-progress-bar > * { position: relative; z-index: 1; }
+  .progress-info { display: flex; align-items: center; gap: 12px; }
+  .progress-icon {
+    width: 44px; height: 44px;
+    background: var(--gradient-primary);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 18px;
+    box-shadow: 0 6px 16px rgba(59,130,246,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  .progress-text h4 { color: var(--text-dark); font-size: 15px; margin-bottom: 2px; }
+  .progress-text p { color: var(--text-light); font-size: 12px; margin: 0; }
+  .progress-stats { display: flex; gap: 20px; flex-wrap: wrap; }
+  .progress-stat {
+    text-align: center;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+  }
+  .progress-stat .num {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1;
+  }
+  .progress-stat .lbl { font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+  .progress-stat.correct .num { color: #10b981; }
+  .progress-stat.wrong .num { color: #ef4444; }
+
+  .quiz-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .quiz-question {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 32px;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+  }
+  .quiz-question::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent); opacity: 0.6;
+  }
+  .quiz-question::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 30%);
+    pointer-events: none; border-radius: inherit;
+  }
+  .quiz-question.answered-correct {
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.3), 0 20px 40px rgba(16, 185, 129, 0.15);
+  }
+  .quiz-question.answered-wrong {
+    border-color: rgba(239, 68, 68, 0.5);
+    box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.3), 0 20px 40px rgba(239, 68, 68, 0.15);
+  }
+  .quiz-question > * { position: relative; z-index: 1; }
+
+  .question-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .question-number {
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    background: var(--gradient-primary);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 16px;
+    font-family: var(--font-display);
+    box-shadow: 0 6px 16px rgba(59,130,246,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  .question-subject {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(245,158,11,0.12);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(245,158,11,0.25);
+  }
+  .question-text {
+    color: var(--text-dark);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-family: var(--font-display);
+  }
+
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .option-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.03);
+    border: 1.5px solid var(--glass-border);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .option-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .option-item:hover:not(.disabled) {
+    border-color: var(--primary-light);
+    background: rgba(59,130,246,0.08);
+    transform: translateX(4px);
+  }
+  .option-item:hover:not(.disabled)::before { opacity: 1; }
+  .option-item.selected {
+    border-color: var(--primary);
+    background: rgba(59,130,246,0.15);
+  }
+  .option-item.correct {
+    border-color: #10b981 !important;
+    background: rgba(16,185,129,0.15) !important;
+  }
+  .option-item.wrong {
+    border-color: #ef4444 !important;
+    background: rgba(239,68,68,0.12) !important;
+  }
+  .option-item.disabled { cursor: not-allowed; }
+
+  .option-letter {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid var(--glass-border-light);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-dark);
+    font-family: var(--font-display);
+    transition: all 0.25s;
+  }
+  .option-item.selected .option-letter {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+  }
+  .option-item.correct .option-letter {
+    background: #10b981 !important;
+    border-color: #10b981 !important;
+    color: #fff !important;
+  }
+  .option-item.wrong .option-letter {
+    background: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: #fff !important;
+  }
+  .option-text {
+    flex: 1;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .option-status {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .option-item.correct .option-status,
+  .option-item.wrong .option-status { opacity: 1; }
+  .option-item.correct .option-status { color: #10b981; }
+  .option-item.wrong .option-status { color: #ef4444; }
+
+  .explanation {
+    margin-top: 16px;
+    padding: 16px 18px;
+    background: rgba(59,130,246,0.08);
+    border-left: 3px solid var(--primary);
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+    display: none;
+    animation: slideDown 0.4s ease;
+  }
+  .explanation.show { display: block; }
+  .explanation strong { color: var(--primary-light); font-weight: 600; }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .quiz-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .quiz-actions .btn { padding: 16px 36px; font-size: 16px; }
+
+  /* Result Modal */
+  .result-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 6, 20, 0.85);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .result-overlay.show {
+    display: flex;
+    opacity: 1;
+  }
+  .result-modal {
+    background: var(--glass-bg-strong);
+    -webkit-backdrop-filter: blur(50px) saturate(200%);
+    backdrop-filter: blur(50px) saturate(200%);
+    border: 1px solid var(--glass-border-light);
+    border-radius: 28px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .result-overlay.show .result-modal { transform: scale(1); }
+  .result-modal::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent); opacity: 0.6;
+  }
+  .result-modal > * { position: relative; z-index: 1; }
+  .result-icon {
+    width: 80px; height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  .result-icon.excellent { background: var(--gradient-success); }
+  .result-icon.good { background: var(--gradient-primary); }
+  .result-icon.average { background: var(--gradient-accent); }
+  .result-icon.poor { background: var(--gradient-danger); }
+  .result-modal h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+  }
+  .result-modal .score-text {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 24px;
+  }
+  .result-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .result-stat {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 16px 10px;
+  }
+  .result-stat .num {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1;
+  }
+  .result-stat .lbl {
+    font-size: 11px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+  }
+  .result-stat.correct .num { color: #10b981; }
+  .result-stat.wrong .num { color: #ef4444; }
+  .result-stat.total .num { color: var(--accent); }
+  .result-modal .btn { width: 100%; justify-content: center; }
 
   .knowledge { position: relative; }
   .kh-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 25px; }
@@ -1162,6 +1513,12 @@
     .about-img-content { padding: 25px; }
     .about-img-content .big-label { font-size: 18px; }
     .cta-banner { margin: 0 10px; padding: 50px 24px; }
+    .quiz-question { padding: 22px; }
+    .question-text { font-size: 15px; }
+    .quiz-progress-bar { padding: 16px 20px; }
+    .progress-stats { gap: 10px; }
+    .progress-stat { padding: 6px 12px; }
+    .result-modal { padding: 28px 22px; }
   }
 
   @media (max-width: 480px) {
@@ -1179,6 +1536,7 @@
     .top-bar { font-size: 12px; padding: 8px 0; }
     .top-bar a { margin: 0 6px; }
     .mobile-nav { max-width: 100%; }
+    .quiz-actions .btn { width: 100%; justify-content: center; }
   }
 
   @media (hover: none) and (pointer: coarse) {
@@ -1299,6 +1657,7 @@
       <li><a href="https://kvrjrcollege.com/results" class="mobile-nav-link"><i class="fa-solid fa-trophy nav-icon"></i> Results</a></li>
       <li><a href="https://kvrjrcollege.com/gallery" class="mobile-nav-link"><i class="fa-solid fa-images nav-icon"></i> Gallery</a></li>
       <li><a href="https://kvrjrcollege.com/knowledge-hub" class="mobile-nav-link"><i class="fa-solid fa-lightbulb nav-icon"></i> Knowledge Hub</a></li>
+      <li><a href="#quiz" class="mobile-nav-link"><i class="fa-solid fa-brain nav-icon"></i> Free Quiz</a></li>
       <li><a href="https://kvrjrcollege.com/contact" class="mobile-nav-link"><i class="fa-solid fa-envelope nav-icon"></i> Contact</a></li>
       <li><a href="https://kvrjrcollege.com/intermediate-admissions" class="mobile-nav-link mobile-cta"><i class="fa-solid fa-user-graduate nav-icon"></i> Apply for Admission</a></li>
     </ul>
@@ -1337,7 +1696,7 @@
       <p>Intermediate MPC & BiPC with integrated IIT-JEE and NEET preparation. Taught personally by KVR Sir and a dedicated faculty team in Vijayawada.</p>
       <div class="hero-btns">
         <a href="https://kvrjrcollege.com/intermediate-admissions" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Apply for Admission</a>
-        <a href="https://kvrjrcollege.com/courses" class="btn btn-outline"><i class="fa-solid fa-book-open"></i> Explore Courses</a>
+        <a href="#quiz" class="btn btn-outline"><i class="fa-solid fa-brain"></i> Try Free Quiz</a>
       </div>
     </div>
     <div class="hero-card fade-up">
@@ -1353,7 +1712,6 @@
         <option>BiPC (Board Focus)</option>
         <option>MEC / CEC</option>
       </select>
-    
       <a href="https://wa.me/918522937878?text=Hi%20KVR%20Junior%20College%2C%20I%20would%20like%20to%20know%20more%20about%20admissions." target="_blank" class="whatsapp-btn">
         <i class="fa-brands fa-whatsapp"></i>
         <span>Chat on WhatsApp</span>
@@ -1719,6 +2077,80 @@
   </div>
 </section>
 
+<!-- ============ QUIZ SECTION ============ -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Free Practice Test</span>
+      <h2>Intermediate Entrance Quiz</h2>
+      <p>Test your knowledge with 10 carefully selected questions from Mathematics, Physics, Chemistry and Biology. Perfect for IIT-JEE, NEET, EAMCET and board exam preparation.</p>
+    </div>
+
+    <div class="quiz-progress-bar">
+      <div class="progress-info">
+        <div class="progress-icon"><i class="fa-solid fa-brain"></i></div>
+        <div class="progress-text">
+          <h4>Quiz Progress</h4>
+          <p id="progress-subtitle">Answer all 10 questions to see your score</p>
+        </div>
+      </div>
+      <div class="progress-stats">
+        <div class="progress-stat">
+          <div class="num" id="stat-answered">0</div>
+          <div class="lbl">Answered</div>
+        </div>
+        <div class="progress-stat correct">
+          <div class="num" id="stat-correct">0</div>
+          <div class="lbl">Correct</div>
+        </div>
+        <div class="progress-stat wrong">
+          <div class="num" id="stat-wrong">0</div>
+          <div class="lbl">Wrong</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-container" id="quiz-container">
+      <!-- Questions will be injected by JavaScript -->
+    </div>
+
+    <div class="quiz-actions">
+      <button class="btn btn-primary" id="submit-quiz-btn" onclick="submitQuiz()">
+        <i class="fa-solid fa-check-circle"></i> Submit Quiz & See Results
+      </button>
+      <button class="btn btn-outline" id="reset-quiz-btn" onclick="resetQuiz()" style="display: none;">
+        <i class="fa-solid fa-rotate-right"></i> Try Again
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Result Modal -->
+<div class="result-overlay" id="result-overlay">
+  <div class="result-modal">
+    <div class="result-icon" id="result-icon"><i class="fa-solid fa-trophy"></i></div>
+    <h3 id="result-title">Quiz Complete!</h3>
+    <p class="score-text" id="result-message">You scored X out of 10</p>
+    <div class="result-stats">
+      <div class="result-stat correct">
+        <div class="num" id="result-correct">0</div>
+        <div class="lbl">Correct</div>
+      </div>
+      <div class="result-stat wrong">
+        <div class="num" id="result-wrong">0</div>
+        <div class="lbl">Wrong</div>
+      </div>
+      <div class="result-stat total">
+        <div class="num" id="result-percent">0%</div>
+        <div class="lbl">Score</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="closeResult()">
+      <i class="fa-solid fa-rotate-right"></i> Try Again
+    </button>
+  </div>
+</div>
+
 <section>
   <div class="container">
     <div class="section-head">
@@ -1905,6 +2337,7 @@
           <li><a href="https://kvrjrcollege.com/faculty" target="_blank"><i class="fa-solid fa-chevron-right"></i> Faculty</a></li>
           <li><a href="https://kvrjrcollege.com/results" target="_blank"><i class="fa-solid fa-chevron-right"></i> Results</a></li>
           <li><a href="https://kvrjrcollege.com/gallery" target="_blank"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+          <li><a href="#quiz"><i class="fa-solid fa-chevron-right"></i> Free Quiz</a></li>
           <li><a href="https://kvrjrcollege.com/knowledge-hub" target="_blank"><i class="fa-solid fa-chevron-right"></i> Knowledge Hub</a></li>
           <li><a href="https://kvrjrcollege.com/contact" target="_blank"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
           <li><a href="https://kvrjrcollege.com/intermediate-admissions" target="_blank"><i class="fa-solid fa-chevron-right"></i> Admissions</a></li>
@@ -1985,44 +2418,295 @@
 <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
- 
-  (function() {
-    'use strict';
+  // ============ QUIZ DATA ============
+  const quizData = [
+    {
+      id: 1,
+      subject: 'Mathematics',
+      icon: 'fa-square-root-variable',
+      question: 'What is the sum of the roots of the quadratic equation 2x² − 7x + 3 = 0?',
+      options: ['−7/2', '7/2', '3/2', '2/7'],
+      correct: 1,
+      explanation: 'Sum of roots = −b/a = −(−7)/2 = <strong>7/2</strong>.'
+    },
+    {
+      id: 2,
+      subject: 'Mathematics',
+      icon: 'fa-square-root-variable',
+      question: 'What is the 10th term of the arithmetic progression 3, 7, 11, 15, ...?',
+      options: ['43', '35', '40', '39'],
+      correct: 3,
+      explanation: 'a = 3, d = 4. 10th term = a + 9d = 3 + 9 × 4 = <strong>39</strong>.'
+    },
+    {
+      id: 3,
+      subject: 'Mathematics',
+      icon: 'fa-square-root-variable',
+      question: 'What is the value of sin 30° + cos 60°?',
+      options: ['1/2', '√3/2', '1', '0'],
+      correct: 2,
+      explanation: 'sin 30° = 1/2 and cos 60° = 1/2, so the sum is <strong>1</strong>.'
+    },
+    {
+      id: 4,
+      subject: 'Mathematics',
+      icon: 'fa-square-root-variable',
+      question: 'What is the distance between the points (0, 0) and (3, 4)?',
+      options: ['7', '5', '√7', '12'],
+      correct: 1,
+      explanation: 'Distance = √(3² + 4²) = √(9 + 16) = √25 = <strong>5</strong>.'
+    },
+    {
+      id: 5,
+      subject: 'Physics',
+      icon: 'fa-atom',
+      question: 'A concave mirror has a radius of curvature of 20 cm. What is its focal length?',
+      options: ['40 cm', '20 cm', '10 cm', '5 cm'],
+      correct: 2,
+      explanation: 'f = R/2 = 20/2 = <strong>10 cm</strong>.'
+    },
+    {
+      id: 6,
+      subject: 'Physics',
+      icon: 'fa-atom',
+      question: 'A 12 V battery is connected across a 4 Ω resistor. What current flows through the resistor?',
+      options: ['48 A', '8 A', '0.33 A', '3 A'],
+      correct: 3,
+      explanation: 'By Ohm\'s law, I = V/R = 12/4 = <strong>3 A</strong>.'
+    },
+    {
+      id: 7,
+      subject: 'Chemistry',
+      icon: 'fa-flask',
+      question: 'Which gas is released when zinc reacts with dilute hydrochloric acid?',
+      options: ['Hydrogen', 'Oxygen', 'Carbon dioxide', 'Chlorine'],
+      correct: 0,
+      explanation: 'Zn + 2HCl → ZnCl₂ + <strong>H₂</strong> (Hydrogen gas is released).'
+    },
+    {
+      id: 8,
+      subject: 'Chemistry',
+      icon: 'fa-flask',
+      question: 'The atomic number of sodium is 11. How many electrons does a sodium ion (Na⁺) have?',
+      options: ['11', '12', '10', '9'],
+      correct: 2,
+      explanation: 'Na has 11 electrons. Na⁺ has lost one electron, so it has <strong>10</strong> electrons.'
+    },
+    {
+      id: 9,
+      subject: 'Biology',
+      icon: 'fa-dna',
+      question: 'Which blood vessel carries oxygenated blood from the lungs to the heart?',
+      options: ['Pulmonary artery', 'Vena cava', 'Aorta', 'Pulmonary vein'],
+      correct: 3,
+      explanation: 'The <strong>pulmonary vein</strong> brings oxygen-rich blood from the lungs to the left atrium.'
+    },
+    {
+      id: 10,
+      subject: 'Biology',
+      icon: 'fa-dna',
+      question: 'Which plant hormone is mainly responsible for cell elongation and for bending of a shoot toward light?',
+      options: ['Auxin', 'Abscisic acid', 'Cytokinin', 'Ethylene'],
+      correct: 0,
+      explanation: '<strong>Auxin</strong> collects on the shaded side of the shoot, and those cells elongate more. The shoot bends toward the light (phototropism).'
+    }
+  ];
 
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-      return false;
+  // ============ QUIZ STATE ============
+  let userAnswers = new Array(quizData.length).fill(null);
+  let quizSubmitted = false;
+
+  // ============ RENDER QUIZ ============
+  function renderQuiz() {
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = '';
+
+    quizData.forEach((q, qIndex) => {
+      const questionDiv = document.createElement('div');
+      questionDiv.className = 'quiz-question';
+      questionDiv.id = `question-${qIndex}`;
+
+      let optionsHTML = '';
+      const letters = ['a', 'b', 'c', 'd'];
+      q.options.forEach((opt, oIndex) => {
+        optionsHTML += `
+          <div class="option-item" id="opt-${qIndex}-${oIndex}" onclick="selectOption(${qIndex}, ${oIndex})">
+            <div class="option-letter">${letters[oIndex]}</div>
+            <div class="option-text">${opt}</div>
+            <div class="option-status" id="status-${qIndex}-${oIndex}"></div>
+          </div>
+        `;
+      });
+
+      questionDiv.innerHTML = `
+        <div class="question-header">
+          <div class="question-number">Q${qIndex + 1}</div>
+          <div style="flex: 1;">
+            <span class="question-subject"><i class="fa-solid ${q.icon}"></i> ${q.subject}</span>
+            <div class="question-text">${q.question}</div>
+          </div>
+        </div>
+        <div class="options-list">
+          ${optionsHTML}
+        </div>
+        <div class="explanation" id="explanation-${qIndex}">
+          <strong><i class="fa-solid fa-lightbulb"></i> Explanation:</strong> ${q.explanation}
+        </div>
+      `;
+
+      container.appendChild(questionDiv);
     });
+  }
 
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); return false; }
-      if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73)) { e.preventDefault(); return false; }
-      if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j' || e.keyCode === 74)) { e.preventDefault(); return false; }
-      if (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67)) { e.preventDefault(); return false; }
-      if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) { e.preventDefault(); return false; }
-      if (e.ctrlKey && (e.key === 'S' || e.key === 's' || e.keyCode === 83)) { e.preventDefault(); return false; }
-      if (e.ctrlKey && (e.key === 'P' || e.key === 'p' || e.keyCode === 80)) { e.preventDefault(); return false; }
-      if (e.ctrlKey && (e.key === 'A' || e.key === 'a' || e.keyCode === 65)) {
-        const tag = e.target.tagName.toLowerCase();
-        if (tag !== 'input' && tag !== 'textarea') { e.preventDefault(); return false; }
+  // ============ SELECT OPTION ============
+  function selectOption(qIndex, oIndex) {
+    if (quizSubmitted) return;
+
+    // Clear previous selection for this question
+    for (let i = 0; i < 4; i++) {
+      const opt = document.getElementById(`opt-${qIndex}-${i}`);
+      if (opt) opt.classList.remove('selected');
+    }
+
+    // Set new selection
+    userAnswers[qIndex] = oIndex;
+    document.getElementById(`opt-${qIndex}-${oIndex}`).classList.add('selected');
+
+    updateProgress();
+  }
+
+  // ============ UPDATE PROGRESS ============
+  function updateProgress() {
+    const answered = userAnswers.filter(a => a !== null).length;
+    document.getElementById('stat-answered').textContent = answered;
+    document.getElementById('progress-subtitle').textContent = 
+      answered === quizData.length ? 'All questions answered! Submit to see results.' : 
+      `${answered} of ${quizData.length} answered`;
+  }
+
+  // ============ SUBMIT QUIZ ============
+  function submitQuiz() {
+    const unanswered = userAnswers.filter(a => a === null).length;
+    if (unanswered > 0) {
+      if (!confirm(`You have ${unanswered} unanswered question${unanswered > 1 ? 's' : ''}. Submit anyway?`)) {
+        return;
       }
-      if (e.ctrlKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67)) {
-        const tag = e.target.tagName.toLowerCase();
-        if (tag !== 'input' && tag !== 'textarea') { e.preventDefault(); return false; }
+    }
+
+    quizSubmitted = true;
+    let correctCount = 0;
+    let wrongCount = 0;
+
+    quizData.forEach((q, qIndex) => {
+      const questionDiv = document.getElementById(`question-${qIndex}`);
+      const userAnswer = userAnswers[qIndex];
+
+      // Mark correct option
+      const correctOpt = document.getElementById(`opt-${qIndex}-${q.correct}`);
+      correctOpt.classList.add('correct');
+      document.getElementById(`status-${qIndex}-${q.correct}`).innerHTML = '<i class="fa-solid fa-check"></i>';
+
+      if (userAnswer !== null) {
+        if (userAnswer === q.correct) {
+          correctCount++;
+          questionDiv.classList.add('answered-correct');
+        } else {
+          wrongCount++;
+          questionDiv.classList.add('answered-wrong');
+          const wrongOpt = document.getElementById(`opt-${qIndex}-${userAnswer}`);
+          wrongOpt.classList.add('wrong');
+          document.getElementById(`status-${qIndex}-${userAnswer}`).innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        }
+      } else {
+        wrongCount++;
+        questionDiv.classList.add('answered-wrong');
       }
+
+      // Disable all options
+      for (let i = 0; i < 4; i++) {
+        document.getElementById(`opt-${qIndex}-${i}`).classList.add('disabled');
+      }
+
+      // Show explanation
+      document.getElementById(`explanation-${qIndex}`).classList.add('show');
     });
 
-    document.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
-    document.querySelectorAll('img').forEach(function(img) {
-      img.addEventListener('dragstart', function(e) { e.preventDefault(); });
-    });
+    // Update stats
+    document.getElementById('stat-correct').textContent = correctCount;
+    document.getElementById('stat-wrong').textContent = wrongCount;
 
-    console.log('%c⚠️ STOP!', 'color: red; font-size: 40px; font-weight: bold;');
-    console.log('%cThis browser feature is intended for developers. If someone told you to copy-paste something here, it is a scam.', 'color: white; font-size: 16px;');
-    console.log('%c© 2026 KVR Junior College. All rights reserved.', 'color: #f59e0b; font-size: 14px;');
-  })();
+    // Show result modal
+    setTimeout(() => showResult(correctCount, wrongCount), 600);
 
+    // Toggle buttons
+    document.getElementById('submit-quiz-btn').style.display = 'none';
+    document.getElementById('reset-quiz-btn').style.display = 'inline-flex';
+  }
 
+  // ============ SHOW RESULT ============
+  function showResult(correct, wrong) {
+    const percent = Math.round((correct / quizData.length) * 100);
+    const icon = document.getElementById('result-icon');
+    const title = document.getElementById('result-title');
+    const message = document.getElementById('result-message');
+
+    document.getElementById('result-correct').textContent = correct;
+    document.getElementById('result-wrong').textContent = wrong;
+    document.getElementById('result-percent').textContent = percent + '%';
+
+    if (percent >= 80) {
+      icon.className = 'result-icon excellent';
+      icon.innerHTML = '<i class="fa-solid fa-trophy"></i>';
+      title.textContent = 'Outstanding!';
+      message.textContent = `Excellent work! You scored ${correct} out of ${quizData.length}. You're well-prepared for entrance exams!`;
+    } else if (percent >= 60) {
+      icon.className = 'result-icon good';
+      icon.innerHTML = '<i class="fa-solid fa-medal"></i>';
+      title.textContent = 'Good Job!';
+      message.textContent = `Nice effort! You scored ${correct} out of ${quizData.length}. Keep practicing to improve further.`;
+    } else if (percent >= 40) {
+      icon.className = 'result-icon average';
+      icon.innerHTML = '<i class="fa-solid fa-book-open"></i>';
+      title.textContent = 'Keep Learning!';
+      message.textContent = `You scored ${correct} out of ${quizData.length}. Review the explanations and try again.`;
+    } else {
+      icon.className = 'result-icon poor';
+      icon.innerHTML = '<i class="fa-solid fa-rotate-right"></i>';
+      title.textContent = 'Don\'t Give Up!';
+      message.textContent = `You scored ${correct} out of ${quizData.length}. Every expert was once a beginner. Try again!`;
+    }
+
+    document.getElementById('result-overlay').classList.add('show');
+  }
+
+  // ============ CLOSE RESULT ============
+  function closeResult() {
+    document.getElementById('result-overlay').classList.remove('show');
+  }
+
+  // ============ RESET QUIZ ============
+  function resetQuiz() {
+    userAnswers = new Array(quizData.length).fill(null);
+    quizSubmitted = false;
+
+    document.getElementById('stat-answered').textContent = '0';
+    document.getElementById('stat-correct').textContent = '0';
+    document.getElementById('stat-wrong').textContent = '0';
+    document.getElementById('progress-subtitle').textContent = 'Answer all 10 questions to see your score';
+
+    document.getElementById('submit-quiz-btn').style.display = 'inline-flex';
+    document.getElementById('reset-quiz-btn').style.display = 'none';
+
+    renderQuiz();
+
+    // Scroll to quiz
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ============ INIT QUIZ ON LOAD ============
+  renderQuiz();
+
+  // ============ 3D ANIMATED BACKGROUND ============
   (function() {
     'use strict';
 
@@ -2218,7 +2902,7 @@
     });
   })();
 
- 
+  // ============ MOBILE MENU SYSTEM ============
   (function() {
     'use strict';
 
@@ -2303,7 +2987,7 @@
     });
   })();
 
- 
+  // ============ SCROLL PROGRESS & HEADER ============
   window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -2332,7 +3016,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.course-card, .why-card, .faculty-card, .result-card, .kh-card, .test-card').forEach(function(el) {
+  document.querySelectorAll('.course-card, .why-card, .faculty-card, .result-card, .kh-card, .test-card, .quiz-question').forEach(function(el) {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'all 0.6s ease';
@@ -2366,10 +3050,3 @@
 
 </body>
 </html>
-<button type="button" onclick="alert('...')">
-  <i class="fa-solid fa-phone-volume"></i> Request Callback
-</button>
-<a href="https://wa.me/918522937878?text=Hi%20KVR%20Junior%20College%2C%20I%20would%20like%20to%20know%20more%20about%20admissions." target="_blank" class="whatsapp-btn">
-  <i class="fa-brands fa-whatsapp"></i>
-  <span>Chat on WhatsApp</span>
-</a>
