@@ -2077,7 +2077,7 @@
   </div>
 </section>
 
-<!-- ============ QUIZ SECTION ============ -->
+
 <section class="quiz-section" id="quiz">
   <div class="container">
     <div class="section-head">
@@ -2111,7 +2111,7 @@
     </div>
 
     <div class="quiz-container" id="quiz-container">
-      <!-- Questions will be injected by JavaScript -->
+     
     </div>
 
     <div class="quiz-actions">
@@ -2125,7 +2125,7 @@
   </div>
 </section>
 
-<!-- Result Modal -->
+
 <div class="result-overlay" id="result-overlay">
   <div class="result-modal">
     <div class="result-icon" id="result-icon"><i class="fa-solid fa-trophy"></i></div>
@@ -2418,7 +2418,7 @@
 <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
-  // ============ QUIZ DATA ============
+ 
   const quizData = [
     {
       id: 1,
@@ -2512,11 +2512,10 @@
     }
   ];
 
-  // ============ QUIZ STATE ============
+
   let userAnswers = new Array(quizData.length).fill(null);
   let quizSubmitted = false;
 
-  // ============ RENDER QUIZ ============
   function renderQuiz() {
     const container = document.getElementById('quiz-container');
     container.innerHTML = '';
@@ -2558,24 +2557,24 @@
     });
   }
 
-  // ============ SELECT OPTION ============
+
   function selectOption(qIndex, oIndex) {
     if (quizSubmitted) return;
 
-    // Clear previous selection for this question
+   
     for (let i = 0; i < 4; i++) {
       const opt = document.getElementById(`opt-${qIndex}-${i}`);
       if (opt) opt.classList.remove('selected');
     }
 
-    // Set new selection
+  
     userAnswers[qIndex] = oIndex;
     document.getElementById(`opt-${qIndex}-${oIndex}`).classList.add('selected');
 
     updateProgress();
   }
 
-  // ============ UPDATE PROGRESS ============
+ 
   function updateProgress() {
     const answered = userAnswers.filter(a => a !== null).length;
     document.getElementById('stat-answered').textContent = answered;
@@ -2584,7 +2583,6 @@
       `${answered} of ${quizData.length} answered`;
   }
 
-  // ============ SUBMIT QUIZ ============
   function submitQuiz() {
     const unanswered = userAnswers.filter(a => a === null).length;
     if (unanswered > 0) {
@@ -2601,7 +2599,7 @@
       const questionDiv = document.getElementById(`question-${qIndex}`);
       const userAnswer = userAnswers[qIndex];
 
-      // Mark correct option
+     
       const correctOpt = document.getElementById(`opt-${qIndex}-${q.correct}`);
       correctOpt.classList.add('correct');
       document.getElementById(`status-${qIndex}-${q.correct}`).innerHTML = '<i class="fa-solid fa-check"></i>';
@@ -2622,28 +2620,28 @@
         questionDiv.classList.add('answered-wrong');
       }
 
-      // Disable all options
+     
       for (let i = 0; i < 4; i++) {
         document.getElementById(`opt-${qIndex}-${i}`).classList.add('disabled');
       }
 
-      // Show explanation
+      
       document.getElementById(`explanation-${qIndex}`).classList.add('show');
     });
 
-    // Update stats
+
     document.getElementById('stat-correct').textContent = correctCount;
     document.getElementById('stat-wrong').textContent = wrongCount;
 
-    // Show result modal
+    
     setTimeout(() => showResult(correctCount, wrongCount), 600);
 
-    // Toggle buttons
+
     document.getElementById('submit-quiz-btn').style.display = 'none';
     document.getElementById('reset-quiz-btn').style.display = 'inline-flex';
   }
 
-  // ============ SHOW RESULT ============
+ 
   function showResult(correct, wrong) {
     const percent = Math.round((correct / quizData.length) * 100);
     const icon = document.getElementById('result-icon');
@@ -2679,12 +2677,12 @@
     document.getElementById('result-overlay').classList.add('show');
   }
 
-  // ============ CLOSE RESULT ============
+ 
   function closeResult() {
     document.getElementById('result-overlay').classList.remove('show');
   }
 
-  // ============ RESET QUIZ ============
+
   function resetQuiz() {
     userAnswers = new Array(quizData.length).fill(null);
     quizSubmitted = false;
@@ -2699,14 +2697,14 @@
 
     renderQuiz();
 
-    // Scroll to quiz
+   
     document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  // ============ INIT QUIZ ON LOAD ============
+  
   renderQuiz();
 
-  // ============ 3D ANIMATED BACKGROUND ============
+ 
   (function() {
     'use strict';
 
@@ -2902,7 +2900,7 @@
     });
   })();
 
-  // ============ MOBILE MENU SYSTEM ============
+
   (function() {
     'use strict';
 
@@ -2987,7 +2985,7 @@
     });
   })();
 
-  // ============ SCROLL PROGRESS & HEADER ============
+ 
   window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
