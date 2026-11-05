@@ -1,0 +1,192 @@
+# ============================================================
+# ROBOTS.TXT - KVR Junior College
+# Website: https://peregrineturbo-alt.github.io/KVR-Junior-College-vijayawada/
+# 
+# ============================================================
+
+
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /courses
+Allow: /faculty
+Allow: /results
+Allow: /gallery
+Allow: /contact
+Allow: /knowledge-hub
+Allow: /knowledge-hub/*
+Allow: /courses/*
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.ico$
+Allow: /*.xml$
+
+# Disallow sensitive/admin pages
+Disallow: /student-login
+Disallow: /admin-login
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /private/
+Disallow: /internal/
+Disallow: /temp/
+Disallow: /test/
+Disallow: /staging/
+Disallow: /dev/
+
+# Disallow duplicate content patterns
+Disallow: /*?sort=
+Disallow: /*?filter=
+Disallow: /*?page=
+Disallow: /*?ref=
+Disallow: /*?utm_
+Disallow: /*?sessionid=
+Disallow: /*?sid=
+
+# Crawl delay for non-critical bots (1 second)
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+Disallow: /student-login
+Disallow: /admin-login
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /assets/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+
+
+User-agent: Googlebot-News
+Allow: /knowledge-hub/
+Allow: /knowledge-hub/articles
+Allow: /knowledge-hub/exam-updates
+Allow: /knowledge-hub/success-stories
+
+
+User-agent: Bingbot
+Allow: /
+Disallow: /student-login
+Disallow: /admin-login
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 1
+
+
+User-agent: bingbot-Image
+Allow: /images/
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.webp$
+
+
+User-agent: Yandex
+Allow: /
+Disallow: /student-login
+Disallow: /admin-login
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 2
+
+
+User-agent: Baiduspider
+Allow: /
+Disallow: /student-login
+Disallow: /admin-login
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 3
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /student-login
+Disallow: /admin-login
+Disallow: /admin/
+
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /student-login
+Disallow: /admin-login
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+
+Sitemap: https://peregrineturbo-alt.github.io/KVR-Junior-College-vijayawada/sitemap.xml
