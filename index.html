@@ -111,13 +111,13 @@
   }
   body.menu-open { overflow: hidden; position: fixed; width: 100%; height: 100%; }
 
-  /* ============ 3D CANVAS BACKGROUND ============ */
+ 
   #bg3d-canvas {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     z-index: -3; pointer-events: none;
   }
 
-  /* ============ LIQUID BLOBS ============ */
+ 
   .liquid-blob {
     position: fixed; border-radius: 50%;
     filter: blur(120px); opacity: 0.35;
@@ -135,7 +135,7 @@
     66% { transform: translate(-60px, 80px) scale(0.95); }
   }
 
-  /* ============ LIQUID GLASS CARD ============ */
+ 
   .glass {
     background: var(--glass-bg);
     -webkit-backdrop-filter: blur(40px) saturate(180%);
@@ -173,14 +173,14 @@
   button { font-family: inherit; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-  /* Scroll Progress */
+ 
   .scroll-progress {
     position: fixed; top: 0; left: 0; height: 3px; width: 0%;
     background: var(--gradient-accent); z-index: 10001;
     transition: width 0.1s; box-shadow: 0 0 10px rgba(245,158,11,0.6);
   }
 
-  /* Announcement */
+
   .announcement {
     background: rgba(245, 158, 11, 0.15);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -200,7 +200,7 @@
   .marquee .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; display: inline-block; }
   @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-  /* Top Bar */
+
   .top-bar {
     background: var(--glass-bg-subtle);
     -webkit-backdrop-filter: blur(40px) saturate(180%);
@@ -221,7 +221,7 @@
   .top-bar .phones { display: inline-flex; gap: 12px; flex-wrap: wrap; }
   .top-bar .phones a { margin-left: 0; }
 
-  /* Header */
+ 
   header {
     background: var(--glass-bg);
     -webkit-backdrop-filter: blur(50px) saturate(200%);
@@ -268,7 +268,7 @@
   }
   .nav-cta:hover { transform: translateY(-2px) !important; box-shadow: 0 10px 28px rgba(245,158,11,0.5) !important; }
 
-  /* Hamburger */
+
   .hamburger {
     display: none; width: 44px; height: 44px;
     background: var(--glass-bg); border: 1px solid var(--glass-border);
@@ -292,7 +292,6 @@
   .hamburger.is-active .hamburger-line:nth-child(2) { opacity: 0; transform: translateY(-50%) scaleX(0); }
   .hamburger.is-active .hamburger-line:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
 
-  /* Mobile Menu */
   .mobile-overlay {
     position: fixed; inset: 0;
     background: rgba(3, 6, 20, 0.6);
@@ -590,7 +589,7 @@
   .about-features h4 { font-family: var(--font-display); color: var(--text-dark); margin-bottom: 4px; }
   .about-features p { font-size: 14px; color: var(--text-light); margin: 0; line-height: 1.6; }
 
-  /* Courses */
+ 
   .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; }
   .course-card {
     background: var(--glass-bg);
@@ -645,7 +644,7 @@
   .course-link { color: var(--primary-light); font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.3s; }
   .course-link:hover { gap: 12px; color: var(--accent); }
 
-  /* Why */
+
   .why {
     background: var(--glass-bg-subtle);
     -webkit-backdrop-filter: blur(30px) saturate(150%);
@@ -696,7 +695,7 @@
   .why-card h4 i { color: var(--accent); font-size: 20px; }
   .why-card p { color: var(--text-light); font-size: 14px; line-height: 1.7; }
 
-  /* Faculty */
+ 
   .faculty { position: relative; }
   .faculty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
   .faculty-card {
@@ -734,7 +733,7 @@
   }
   .faculty-info p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
 
-  /* Results */
+
   .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
   .result-card {
     background: var(--glass-bg);
@@ -773,7 +772,7 @@
   .result-card .label { color: var(--text-dark); font-weight: 600; margin-bottom: 8px; font-size: 15px; }
   .result-card .detail { font-size: 13px; color: var(--text-light); }
 
-  /* Knowledge Hub */
+ 
   .knowledge { position: relative; }
   .kh-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 25px; }
   .kh-card {
@@ -820,7 +819,7 @@
   .kh-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-light); padding-top: 15px; border-top: 1px solid var(--glass-border); font-weight: 500; }
   .kh-meta i { margin-right: 4px; }
 
-  /* Testimonials */
+
   .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 25px; }
   .test-card {
     background: var(--glass-bg);
@@ -854,7 +853,7 @@
   .test-author span { font-size: 12px; color: var(--text-light); display: inline-flex; align-items: center; gap: 5px; }
   .test-author span i { color: var(--accent); font-size: 10px; }
 
-  /* Google Reviews */
+  
   .google-reviews { position: relative; overflow: hidden; }
   .google-reviews .container { position: relative; z-index: 2; }
   .reviews-header { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
@@ -889,7 +888,7 @@
     opacity: 0.6;
   }
 
-  /* Contact */
+
   .contact { position: relative; }
   .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; }
   .contact-info > p { color: var(--text-light); margin-bottom: 30px; }
@@ -961,7 +960,7 @@
   }
   .contact-form button:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(59,130,246,0.5); }
 
-  /* CTA Banner */
+
   .cta-banner {
     background: var(--glass-bg-strong);
     -webkit-backdrop-filter: blur(50px) saturate(200%);
@@ -991,7 +990,7 @@
   .cta-banner .btn { background: var(--gradient-accent); color: #fff; box-shadow: 0 8px 24px rgba(245,158,11,0.4), inset 0 1px 0 rgba(255,255,255,0.3); }
   .cta-banner .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(245,158,11,0.5); }
 
-  /* Footer */
+ 
   footer {
     background: var(--glass-bg);
     -webkit-backdrop-filter: blur(50px) saturate(200%);
@@ -1063,7 +1062,7 @@
   }
   .footer-bottom .designer-credit:hover { color: var(--accent); }
 
-  /* Floating Buttons */
+
   .floating-btn { position: fixed; bottom: 25px; right: 25px; z-index: 999; display: flex; flex-direction: column; gap: 14px; align-items: flex-end; }
   .float-action {
     width: 58px; height: 58px; border-radius: 50%;
@@ -1211,10 +1210,10 @@
 </head>
 <body>
 
-<!-- 3D Canvas Background -->
+
 <canvas id="bg3d-canvas"></canvas>
 
-<!-- Liquid Blobs -->
+
 <div class="liquid-blob blob-1"></div>
 <div class="liquid-blob blob-2"></div>
 <div class="liquid-blob blob-3"></div>
@@ -1984,7 +1983,7 @@
 <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
-  // ============ 3D ANIMATED BACKGROUND ============
+ 
   (function() {
     'use strict';
 
@@ -2180,7 +2179,7 @@
     });
   })();
 
-  // ============ MOBILE MENU SYSTEM ============
+ 
   (function() {
     'use strict';
 
