@@ -87,6 +87,7 @@
     --glass-shadow-hover: 0 20px 60px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(255,255,255,0.08) inset;
     --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
     --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    --gradient-whatsapp: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     --gradient-android: linear-gradient(135deg, #34A853 0%, #0F9D58 50%, #0B8043 100%);
     --font-display: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -115,7 +116,6 @@
     user-select: none;
   }
   body.menu-open { overflow: hidden; position: fixed; width: 100%; height: 100%; }
-  .allow-select { -webkit-user-select: text; -moz-user-select: text; -ms-user-select: text; user-select: text; }
 
   #bg3d-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -3; pointer-events: none; }
 
@@ -413,6 +413,24 @@
   }
   .btn-outline:hover { background: var(--glass-bg-strong); transform: translateY(-3px); }
 
+
+  .btn-whatsapp {
+    background: var(--gradient-whatsapp);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  .btn-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+  }
+  .btn-whatsapp i {
+    animation: whatsapp-pulse 2s infinite;
+  }
+  @keyframes whatsapp-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+
   .hero-card {
     background: var(--glass-bg-strong);
     -webkit-backdrop-filter: blur(50px) saturate(200%);
@@ -448,13 +466,37 @@
   }
   .hero-card input::placeholder { color: rgba(255,255,255,0.4); }
   .hero-card select option { background: #0a1028; color: #fff; }
-  .hero-card button {
-    width: 100%; background: var(--gradient-accent); color: #fff; padding: 14px;
-    border-radius: 14px; border: none; font-weight: 600; cursor: pointer; font-size: 15px;
-    transition: all 0.3s; box-shadow: 0 8px 24px rgba(245,158,11,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit;
+  .hero-card .whatsapp-btn {
+    width: 100%;
+    background: var(--gradient-whatsapp);
+    color: #fff;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: inherit;
+    text-decoration: none;
   }
-  .hero-card button:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(245,158,11,0.5); }
+  .hero-card .whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+  }
+  .hero-card .whatsapp-btn i {
+    font-size: 18px;
+    animation: whatsapp-bounce 2s infinite;
+  }
+  @keyframes whatsapp-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
 
   .stats { padding: 60px 0; margin-top: -40px; position: relative; z-index: 3; }
   .stats-grid {
@@ -1033,7 +1075,7 @@
     border-radius: 50% 50% 0 0; pointer-events: none;
   }
   .float-action:hover { transform: scale(1.12) translateY(-3px); }
-  .float-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); }
+  .float-whatsapp { background: var(--gradient-whatsapp); }
   .float-call { background: var(--gradient-primary); }
   .float-android {
     background: var(--gradient-android); width: 62px; height: 62px; font-size: 26px;
@@ -1311,7 +1353,11 @@
         <option>BiPC (Board Focus)</option>
         <option>MEC / CEC</option>
       </select>
-      <button type="button" onclick="alert('Thank you! Our team will contact you shortly.')"><i class="fa-solid fa-phone-volume"></i> Request Callback</button>
+    
+      <a href="https://wa.me/918522937878?text=Hi%20KVR%20Junior%20College%2C%20I%20would%20like%20to%20know%20more%20about%20admissions." target="_blank" class="whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>Chat on WhatsApp</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1748,7 +1794,7 @@
           <div>
             <h4>Phone</h4>
             <div class="contact-phones">
-              <a href="tel:+918522937878"><i class="fa-solid fa-phone"></i> +91-8522937878</a>
+              <a href="tel:+918522937878"><i class="fa-solid fa-phone"></i> +91 85229 37878</a>
               <a href="tel:+918374422929"><i class="fa-solid fa-phone"></i> +91-8374422929</a>
               <a href="tel:+918523894545"><i class="fa-solid fa-phone"></i> +91-8523894545</a>
             </div>
@@ -1892,7 +1938,7 @@
         <h4 style="margin-top: 25px;">Contact</h4>
         <ul>
           <li><a href="https://maps.google.com/?cid=14904466435476173824" target="_blank"><i class="fa-solid fa-location-dot"></i> Labbipet, Vijayawada</a></li>
-          <li><a href="tel:+918522937878"><i class="fa-solid fa-phone"></i> +91-8522937878</a></li>
+          <li><a href="tel:+918522937878"><i class="fa-solid fa-phone"></i> +91 85229 37878</a></li>
           <li><a href="tel:+918374422929"><i class="fa-solid fa-phone"></i> +91-8374422929</a></li>
           <li><a href="tel:+918523894545"><i class="fa-solid fa-phone"></i> +91-8523894545</a></li>
           <li><a href="mailto:info@kvrjrcollege.com"><i class="fa-solid fa-envelope"></i> info@kvrjrcollege.com</a></li>
@@ -1903,7 +1949,7 @@
     </div>
     <div class="footer-bottom">
       © 2026 <a href="https://kvrjrcollege.com" target="_blank">KVR Junior College</a>. All rights reserved. | 
-      <a href="tel:+918522937878"><i class="fa-solid fa-phone"></i> +91-8522937878</a> |
+      <a href="tel:+918522937878"><i class="fa-solid fa-phone"></i> +91 85229 37878</a> |
       <a href="tel:+918374422929"><i class="fa-solid fa-phone"></i> +91-8374422929</a> |
       <a href="tel:+918523894545"><i class="fa-solid fa-phone"></i> +91-8523894545</a> |
       <a href="https://www.facebook.com/people/KVR-Junior-College/61593771264571/" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook</a> | 
@@ -1943,83 +1989,39 @@
   (function() {
     'use strict';
 
-   
     document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
       return false;
     });
 
- 
     document.addEventListener('keydown', function(e) {
-      // F12
-      if (e.key === 'F12' || e.keyCode === 123) {
-        e.preventDefault();
-        return false;
-      }
-     
-      if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73)) {
-        e.preventDefault();
-        return false;
-      }
-    
-      if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j' || e.keyCode === 74)) {
-        e.preventDefault();
-        return false;
-      }
-     
-      if (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67)) {
-        e.preventDefault();
-        return false;
-      }
-      
-      if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) {
-        e.preventDefault();
-        return false;
-      }
-     
-      if (e.ctrlKey && (e.key === 'S' || e.key === 's' || e.keyCode === 83)) {
-        e.preventDefault();
-        return false;
-      }
-      
-      if (e.ctrlKey && (e.key === 'P' || e.key === 'p' || e.keyCode === 80)) {
-        e.preventDefault();
-        return false;
-      }
-     
+      if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); return false; }
+      if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73)) { e.preventDefault(); return false; }
+      if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j' || e.keyCode === 74)) { e.preventDefault(); return false; }
+      if (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67)) { e.preventDefault(); return false; }
+      if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) { e.preventDefault(); return false; }
+      if (e.ctrlKey && (e.key === 'S' || e.key === 's' || e.keyCode === 83)) { e.preventDefault(); return false; }
+      if (e.ctrlKey && (e.key === 'P' || e.key === 'p' || e.keyCode === 80)) { e.preventDefault(); return false; }
       if (e.ctrlKey && (e.key === 'A' || e.key === 'a' || e.keyCode === 65)) {
         const tag = e.target.tagName.toLowerCase();
-        if (tag !== 'input' && tag !== 'textarea') {
-          e.preventDefault();
-          return false;
-        }
+        if (tag !== 'input' && tag !== 'textarea') { e.preventDefault(); return false; }
       }
-     
       if (e.ctrlKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67)) {
         const tag = e.target.tagName.toLowerCase();
-        if (tag !== 'input' && tag !== 'textarea') {
-          e.preventDefault();
-          return false;
-        }
+        if (tag !== 'input' && tag !== 'textarea') { e.preventDefault(); return false; }
       }
     });
 
-    
-    document.addEventListener('dragstart', function(e) {
-      e.preventDefault();
-      return false;
-    });
-
-   
+    document.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
     document.querySelectorAll('img').forEach(function(img) {
       img.addEventListener('dragstart', function(e) { e.preventDefault(); });
     });
 
-   
     console.log('%c⚠️ STOP!', 'color: red; font-size: 40px; font-weight: bold;');
     console.log('%cThis browser feature is intended for developers. If someone told you to copy-paste something here, it is a scam.', 'color: white; font-size: 16px;');
     console.log('%c© 2026 KVR Junior College. All rights reserved.', 'color: #f59e0b; font-size: 14px;');
   })();
+
 
   (function() {
     'use strict';
@@ -2216,7 +2218,7 @@
     });
   })();
 
-  
+ 
   (function() {
     'use strict';
 
@@ -2364,5 +2366,10 @@
 
 </body>
 </html>
-  <meta name="google-site-verification" content="S-WqYuu0-JUkhc3HdYdKHnpT7VK-W3KJHp-4UR6Rg1Q" />
-  
+<button type="button" onclick="alert('...')">
+  <i class="fa-solid fa-phone-volume"></i> Request Callback
+</button>
+<a href="https://wa.me/918522937878?text=Hi%20KVR%20Junior%20College%2C%20I%20would%20like%20to%20know%20more%20about%20admissions." target="_blank" class="whatsapp-btn">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span>Chat on WhatsApp</span>
+</a>
